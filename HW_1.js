@@ -11,8 +11,8 @@ function makeNegative(num) {
   console.log(makeNegative(-9));
 
 //2.Протилежне число
-let num = 6;
-let oppositeNum = -num;
+const num = 6;
+const oppositeNum = -num;
 console.log(oppositeNum); 
  
 //3.Парні чи непарнi
