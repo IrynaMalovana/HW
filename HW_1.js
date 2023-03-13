@@ -1,5 +1,6 @@
 'use strict'
 
+
 //1.Повернути негативний
 function makeNegative(num) {
     if (num >= 0) {
