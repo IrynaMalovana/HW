@@ -4,7 +4,7 @@ const userNames = ["Петрик Ольга Іванівна", "Гнатюк П�
 
 const initials = userNames.map(element => {
   const words = element.split(' ');
-  const initials = words.map(word => word.charAt(0).toUpperCase()).join('.');
+  const initials = words.map(word => word.charAt(0)+'.'.toUpperCase()).join(' ');
   return initials;
 }).sort();
 
@@ -22,7 +22,5 @@ console.log(typeof reverseMaxValue);
 const resultsArray = [1, 2, [3, [4]]];
 const productOfArray = resultsArray
 .flat(Infinity)
-.reduce((accum, element) => {
-    return element * accum;
-}, 1);
+.reduce((accum, element) => element * accum, 1);
 console.log(productOfArray);
