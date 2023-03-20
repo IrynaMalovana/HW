@@ -6,18 +6,16 @@ function DurationBetweenDates (dateString1 = '16 Mar 2000', dateString2 = '16 Ma
   const date1 = new Date(dateString1);
   const date2 = new Date(dateString2);
   const differenceDates = Math.abs(date1-date2);
-if (durationUnit === 'days') {
-  return `${differenceDates/(864*10**5)} days`;
-}
-else if (durationUnit === 'minutes') {
-  return `${differenceDates/60000} minutes`;
-}
-else if (durationUnit === 'hours') {
-  return `${differenceDates/(36*10**5)} hours`;
-}
-else (durationUnit === 'seconds') {
-  return `${differenceDates/1000} seconds`;
-}
+  const durationUnitObj= {
+          days: `${differenceDates/(864*10**5)} days`,
+          minutes: `${differenceDates/60000} minutes`,
+          hours: `${differenceDates/(36*10**5)} hours`,
+          seconds : `${differenceDates/1000} seconds`
+  }       
+  for (const key in durationUnitObj) {
+    if (durationUnit === key)
+    return durationUnitObj[key];
+  }
 }
  console.log(DurationBetweenDates('02 Aug 1985', '03 Aug 1985', 'seconds'));
  console.log(DurationBetweenDates('31 Jan 2022', '03 Feb 2021', 'days'));
@@ -42,15 +40,30 @@ function optimizer(data) {
   console.log(updatedPriceData);
 
 // 3.Задача про рекурсію та ітерацію
+//рекурсивно
 
 const recursiveOddSumTo = (number) => {
   if (number <= 0) {
     return 0; 
-  } else if (number % 2 === 0) {
+  } if (number % 2 === 0) {
     return recursiveOddSumTo(number - 1);
-  } else {
+  } 
     return number + recursiveOddSumTo(number - 2);
-  }
+  
 }
 console.log(recursiveOddSumTo(1)) 
 console.log(recursiveOddSumTo(10))
+
+//ітеративно
+
+function iterativeOddSumTo(number) {
+  let sum = 0;
+  let i = 1;
+  do {
+    sum += i;
+    i +=2
+  } while (i <= number)
+  return sum;
+}
+console.log(iterativeOddSumTo(1))
+console.log(iterativeOddSumTo(10))
