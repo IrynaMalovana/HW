@@ -20,21 +20,21 @@ function DurationBetweenDates (dateString1 = '16 Mar 2000', dateString2 = '16 Ma
 // 2.Задача про перетворення об'єкту
 
 function optimizer(data) {
-    const updatedData = {};
-    for (const key in data) {
-      const updatedKey = key.toLowerCase();
-      const updatedValue = parseFloat(data[key]).toFixed(2);
-      updatedData[updatedKey] = updatedValue;
-    }
-    return updatedData;
-  }
-  const priceData = {
-    Apples: '23.4',
-    BANANAS: '48',
-    oRAngGEs: '48.7584',
-  };
-  const updatedPriceData = optimizer(priceData);
-  console.log(updatedPriceData);
+  const updatedData = {};
+  Object.keys(data).forEach((key) => {
+    const updatedKey = key.toLowerCase();
+    const updatedValue = parseFloat(data[key]).toFixed(2);
+  updatedData[updatedKey] = updatedValue;
+});
+  return updatedData;
+}
+const priceData = {
+  Apples: '23.4',
+  BANANAS: '48',
+  oRAngGEs: '48.7584',
+};
+const updatedPriceData = optimizer(priceData);
+console.log(updatedPriceData);
 
 // 3.Задача про рекурсію та ітерацію
 //рекурсивно
