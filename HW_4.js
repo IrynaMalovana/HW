@@ -3,8 +3,7 @@
 // Використайте оператор розширення:
 
 function addThemAll(...args) {
-    const sum = args.reduce((accum, element) => accum + element, 0);
-    return sum;
+    return args.reduce((accum, element) => accum + element, 0);
   }
   console.log(addThemAll(2,4));
   console.log(addThemAll(1,2,3,4));
@@ -12,25 +11,37 @@ function addThemAll(...args) {
 
 
 // 2. Задача на використання замикання. 
-  function multiply(a) {
-    return function(b) {
-      return a * b;
-    }
+function multiply(a) {
+  return (b) => {
+    return a * b;
   }
+}
 console.log(multiply(5)(5))
 console.log(multiply(2)(-2))
 console.log(multiply(4)(3))
 
 // 3. Сортування масиву фільмів.
-  function byProperty(property, direction) {
-    return function(a, b) {
-      if (direction === '>') {
-        return a[property] > b[property] ? 1 : -1;
-      } 
-        return a[property] < b[property] ? 1 : -1;
-      
-    }
+function byProperty(property, direction) {
+  return function(a, b) {
+    if (direction === '<') {
+      if a[property] < b[property] {
+         return 1;
+      } else if a[property] > b[property] {
+        return -1;
+      } else {
+      return 0;
+      }
+    } else {
+    if a[property] < b[property] {
+        return -1;
+      } else if a[property] > b[property] {
+        return 1;
+      } else {
+        return 0;
+      }
+    }     
   }
+}
 console.log(movies.sort(byProperty('releaseYear', '>'))); 
 console.log(movies.sort(byProperty('runningTimeInMinutes', '<')));
 console.log(movies.sort(byProperty('movieName', '>')));
@@ -39,7 +50,7 @@ console.log(movies.sort(byProperty('movieName', '>')));
 
 //Використовуючи setInterval
 function detonatorTimer(delay) {
-  let timerId = setInterval(() => {
+  const timerId = setInterval(() => {
     if (delay === 0) {
       console.log('BOOM!');
       clearInterval(timerId);
@@ -91,7 +102,7 @@ let me = {
 let me = {
   name: 'Iryna',
   phoneNumber: '+380663278924',
-  yearOfBirth: 1993
+  yearOfBirth: 1993,
   favoriteFood: 'vegetables',
   favoriteDessert: 'cheesecake'
   
@@ -116,7 +127,7 @@ let me = {
   // 7. Напишіть функцію-декоратор яка вопвільнює виконання довільної функції на вказану кількість секунд.
 
   function isPalindrome(word) {
-    let reversedWord = word.split('').reverse().join('');
+    const reversedWord = word.split('').reverse().join('');
     if (word === reversedWord) {
       console.log(`${word} is a palindrome!`);
     } else {
