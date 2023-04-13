@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Date Difference Calculator</title>
+  <link rel="stylesheet" href="index.css">
+</head>
+  <body>
+    <h1>Date Difference Calculator</h1>
+  <form>
+  <label for="startDate">Start Date:</label>
+  <input type="date" id="startDate" name="startDate">
+  <label for="endDate">End Date:</label>
+  <input type="date" id="endDate" name="endDate">
+  <label for="presets">Choose a Preset:</label>
+  <select id="presets" name="presets">
+    <option class="preset" value="none" selected disabled hidden>Choose a Preset</option>
+    <option class="preset" value="week">Week</option>
+    <option class="preset" value="month">Month</option>
+  </select>
+  <label for="options">Choose an Option:</label>
+  <select id="options" name="options">
+    <option class="option" value="none" selected disabled hidden>Choose an Option</option>
+    <option class="option" value="days">Days</option>
+    <option class="option" value="hours">Hours</option>
+    <option class="option" value="minutes">Minutes</option>
+    <option class="option" value="seconds">Seconds</option>
+  </select>
+  <label for="days">Choose a Day Option:</label>
+  <select id="days" name="days">
+    <option value="none" selected disabled hidden>Choose a Day Option</option>
+    <option value="all">All Days</option>
+    <option value="weekdays">Weekdays</option>
+    <option value="weekends">Weekends</option>
+  </select>
+  <button type="submit" id="submitBtn">Calculate</button>
+  <label>Result:<input id="result" class="input" readonly></label>
+</form>
+
+
+	<script src="index.js" type="module"></script>
+  </body>
+</html>
