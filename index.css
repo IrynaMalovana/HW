@@ -1,0 +1,56 @@
+/* Налаштування шрифту та кольорів */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Стилі для форми */
+h1 {
+    text-align: center;
+}
+form {
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+select, input {
+  padding: 0.5rem;
+  border-radius: 0.25rem;
+  border: 1px solid #e2e8f0;
+  width: 100%;
+  max-width: 20rem;
+}
+
+select:focus, input:focus {
+  outline: none;
+  border-color: #667eea;
+}
+
+button {
+  padding: 0.5rem 1rem;
+  border-radius: 0.25rem;
+  background-color: #1a1e34;
+  color: #fff;
+  cursor: pointer;
+}
+
+input[readonly] {
+  background-color: #f7fafc;
+}
+
+/* Стилі для результату */
+.input {
+  display: inline-block;
+  margin-left: 0.5rem;
+  font-size: 1.25rem;
+  font-weight: bold;
+  color: #667eea;
+}
